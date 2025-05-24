@@ -71,7 +71,7 @@ public class Flip7Simulation {
 
   for (int card : deck) {
     if (seen.size() == n) return score; // If we've drawn n cards, bank.
-    if (seen.contains(card)) return 0; // Bust (the other functions return score because they're checking score BEFORE bust, but this function returns the actual score you'd get).
+    if (seen.contains(card)) return 0; // Bust (the other functions return count/score because they're checking BEFORE bust, but this function returns the actual score you'd get).
     seen.add(card); // This card is unique, so put it in our hand.
     score += card;
     if (seen.size() == 7) return score + 15; // If this card is our 7th unique, return our score for the round (sum of cards, including this one, plus 15).
